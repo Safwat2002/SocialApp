@@ -6,10 +6,6 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  const handleBackhome = () => {
-    navigate('/');
-  }
-
   const handleRegisterLoginClick = () => {
     navigate('/login');
   }

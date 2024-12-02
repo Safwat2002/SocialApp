@@ -1,8 +1,8 @@
 import { Chat, Notifications, Person, Search } from '@mui/icons-material'
 import React from 'react'
-import topImage from '../../assets/imgs/personsImgs/person1.jpg'
-import './topbar.css'
 import { useNavigate } from 'react-router'
+import topImage from '../../assets/imgs/peopleImgs/person1.jpg'
+import './topbar.css'
 
 function Topbar() {
 

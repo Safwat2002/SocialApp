@@ -1,5 +1,5 @@
 import { EmojiEmotions, Label, PermMedia, Room } from '@mui/icons-material'
-import PersonImage from '../../assets/imgs/personsImgs/person1.jpg'
+import PersonImage from '../../assets/imgs/peopleImgs/person1.jpg'
 import './share-box.css'
 
 export default function ShareBox() {

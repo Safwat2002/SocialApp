@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import PersonImg from '../../assets/imgs/personsImgs/person1.jpg';
+import PersonImg from '../../assets/imgs/peopleImgs/person1.jpg';
 import { Feed, Leftbar, Post, Rightbar, Topbar } from "../../components";
 import './home.css';
 

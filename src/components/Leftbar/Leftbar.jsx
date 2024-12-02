@@ -2,7 +2,7 @@ import { Bookmark, Chat, Event, Group, HelpOutline, PlayCircleFilledOutlined, Rs
 import React from 'react'
 import './leftbar.css'
 
-import FriendImg from '../../assets/imgs/personsImgs/person2.jpg'
+import FriendImg from '../../assets/imgs/peopleImgs/person2.jpg'
 
 export default function Leftbar() {
     return (

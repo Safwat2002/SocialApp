@@ -1,6 +1,6 @@
 import React from 'react'
-import { default as PersonImg, default as ProfileCover } from '../../assets/imgs/personsImgs/person1.jpg'
-import { default as Person2, default as ProfileImg } from '../../assets/imgs/personsImgs/person2.jpg'
+import { default as PersonImg, default as ProfileCover } from '../../assets/imgs/peopleImgs/person1.jpg'
+import { default as Person2, default as ProfileImg } from '../../assets/imgs/peopleImgs/person2.jpg'
 import { Feed, Leftbar, Post, Rightbar, Topbar } from '../../components'
 import './profile.css'
 

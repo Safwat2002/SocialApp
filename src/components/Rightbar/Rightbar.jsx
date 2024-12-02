@@ -1,7 +1,7 @@
 import CakeIcon from '@mui/icons-material/Cake';
 import React from 'react';
 import AdImage from '../../assets/imgs/ad/ad.jpg';
-import FriendImg from '../../assets/imgs/personsImgs/person2.jpg';
+import FriendImg from '../../assets/imgs/peopleImgs/person2.jpg';
 import OnlineUser from '../OnlineUser/OnlineUser';
 import './rightbar.css';
 
