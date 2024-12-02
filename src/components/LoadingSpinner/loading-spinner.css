@@ -1,0 +1,33 @@
+.loading-spinner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-spinner .loading-bar{
+    width:40px;
+    height: 40px;
+    opacity: 0.5;
+    border-width: 6px;
+    border-style: solid;
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+.loading-spinner .loading-text{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}

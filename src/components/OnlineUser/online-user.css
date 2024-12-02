@@ -1,0 +1,31 @@
+
+.right-bar-friend{
+    display:flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px
+}
+
+.right-bar-img-container{
+    position:relative;
+    display: flex;
+    align-items: center;
+}
+
+.right-bar-online{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: limegreen;
+    margin-right: 5px;
+    position:absolute;
+    top:-1px;
+    right: -6px;
+    border:2px solid white;
+}
+
+.right-bar-friend-name{
+    font-size: 16px;
+    font-weight: 450;
+    margin-left: 10px;
+}

@@ -1,0 +1,49 @@
+.login-page{
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-wrapper{
+    display: flex;
+    column-gap: 3rem;
+
+}
+
+.login-left, .login-right{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1778f2;
+    margin-bottom: 1rem;
+}
+
+.login-box{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 2rem;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.login-forgot{
+    text-align: center;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.login-register-button{
+    background-color: var(--main-green-color);
+}
