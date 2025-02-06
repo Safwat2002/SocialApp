@@ -1,3 +1,3 @@
 ### Social Media App Using React
 
-## [App URL](www.google.com)
+## [App URL](http://www.google.com)
