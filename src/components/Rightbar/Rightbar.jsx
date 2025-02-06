@@ -1,11 +1,36 @@
 import CakeIcon from '@mui/icons-material/Cake';
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import AdImage from '../../assets/imgs/ad/ad.jpg';
 import FriendImg from '../../assets/imgs/peopleImgs/person2.jpg';
 import OnlineUser from '../OnlineUser/OnlineUser';
 import './rightbar.css';
 
 export default function Rightbar({ profile }) {
+
+    const [friends,setFriends] = useState();
+
+    const getSingleUser = async (userId) => {
+        const res = await axios.get(`/users/${userId}`)
+        const data = res.data;
+        return data;
+    }
+
+    const getFriends =async ()=>{
+        const friends = await Promise.all(
+            followings.map((following)=>axios.get(`/users/${following}`))
+        )
+        setFriends(friends.data);
+    }
+    
+    const followings = useSelector(state=>state.user.userData.followings);
+
+    useEffect(()=>{
+        getFriends();
+    },[followings])
+
+
 
     const HomePageRightBar = () => {
         return (
@@ -37,50 +62,61 @@ export default function Rightbar({ profile }) {
     }
 
     const ProfilePageRightBar = () => {
+        const user = useSelector(state=>state.user.userData);
         return (
             <>
                 <h4 className='right-bar-title'>Information</h4>
                 <div className="right-bar-info">
-                    <div className="right-bar-info-item">
-                        <span className="right-bar-info-key">City:</span>
-                        <span className="right-bar-info-value">New York</span>
-                    </div>
-                    <div className="right-bar-info-item">
-                        <span className="right-bar-info-key">From:</span>
-                        <span className="right-bar-info-value">Madrid</span>
-                    </div>
-                    <div className="right-bar-info-item">
-                        <span className="right-bar-info-key">Relationship:</span>
-                        <span className="right-bar-info-value">Single</span>
-                    </div>
+                    {
+                        user.city ? (
+                            <div className="right-bar-info-item">
+                                <span className="right-bar-info-key">City:</span>
+                                <span className="right-bar-info-value">{user.city}</span>
+                            </div>
+                        ): ""
+                    }
+
+                    {
+                        user.from ? (
+                            <div className="right-bar-info-item">
+                                <span className="right-bar-info-key">From:</span>
+                                <span className="right-bar-info-value">{user.from}</span>
+                            </div>
+                        ): ""
+                    }
+
+                    {
+                        user.relationship ? (
+                            <div className="right-bar-info-item">
+                                <span className="right-bar-info-key">Relationship:</span>
+                                <span className="right-bar-info-value">{user.relationship}</span>
+                            </div>
+                        ): ""
+                    }
                 </div>
+
                 <hr style={{ marginBottom: "20px" }} />
+
                 <h4 className="right-bar-title">Friends</h4>
                 <div className="right-bar-followings">
+                       
                     <div className="right-bar-following">
-                        <img src={FriendImg} alt="" className="right-bar-following-img" />
-                        <span className="right-bar-following-name">Safwat</span>
+                        <img src={ FriendImg} alt="" className="right-bar-following-img" />
+                        <span className="right-bar-following-name">Safwat nabeel</span>
                     </div>
                     <div className="right-bar-following">
-                        <img src={FriendImg} alt="" className="right-bar-following-img" />
-                        <span className="right-bar-following-name">Safwat</span>
+                        <img src={ FriendImg} alt="" className="right-bar-following-img" />
+                        <span className="right-bar-following-name">Safwat nabeel</span>
                     </div>
                     <div className="right-bar-following">
-                        <img src={FriendImg} alt="" className="right-bar-following-img" />
-                        <span className="right-bar-following-name">Safwat</span>
+                        <img src={ FriendImg} alt="" className="right-bar-following-img" />
+                        <span className="right-bar-following-name">Safwat nabeel</span>
                     </div>
                     <div className="right-bar-following">
-                        <img src={FriendImg} alt="" className="right-bar-following-img" />
-                        <span className="right-bar-following-name">Safwat</span>
+                        <img src={ FriendImg} alt="" className="right-bar-following-img" />
+                        <span className="right-bar-following-name">Safwat nabeel</span>
                     </div>
-                    <div className="right-bar-following">
-                        <img src={FriendImg} alt="" className="right-bar-following-img" />
-                        <span className="right-bar-following-name">Safwat</span>
-                    </div>
-                    <div className="right-bar-following">
-                        <img src={FriendImg} alt="" className="right-bar-following-img" />
-                        <span className="right-bar-following-name">Safwat</span>
-                    </div>
+
                 </div>
             </>
         )

@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { LoadingSpinner, ShareBox } from '../../components/index.js';
 import './feed.css';
 
-export default function Feed({children, isLoading}) {
-
-    const [loading] = useState(isLoading);
-;
+export default function Feed({children, isLoading, rerender}) {
 
     return (
         <div className='feed'>
             <div className="feed-wrapper">
-                <ShareBox />
+                <ShareBox rerender={rerender} />
 
                 {
-                    loading ? (
+                    isLoading ? (
                         <div className="loading-spinner">
                             <LoadingSpinner lightColor={"#03a9f44d"} darkColor={"blue"}/>
                         </div>

@@ -1,0 +1,39 @@
+.online-friends-component{
+    font-weight: bolder;
+    height: calc(100vh - var(--topbar-height) - 50px);
+    overflow-y: scroll;
+}
+
+.online-friends-title{
+    margin-left: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.online-friend{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.online-friend:hover{
+    background-color: #eee;
+    border-radius: 15px;
+}
+
+.online-friend-img-container{
+    position: relative;
+}
+
+.online-friend-badge{
+    width: 11px;
+    aspect-ratio: 1;
+    position: absolute;
+    top:0;
+    right: 0;
+    background-color: limegreen;
+    border-radius: 50%;
+    border: 2px solid white;
+}

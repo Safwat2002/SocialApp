@@ -1,24 +1,38 @@
 import { Chat, Notifications, Person, Search } from '@mui/icons-material'
+import axios from 'axios'
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
 import topImage from '../../assets/imgs/peopleImgs/person1.jpg'
+import { logout } from '../../redux/userSlice'
 import './topbar.css'
 
 function Topbar() {
 
     const navigate = useNavigate();
+    const dispatch = useDispatch()
 
-    const handleLogout = () => {
-        navigate('/login');
+    const handleLogout = async () => {
+        try{
+            await axios.get('auth/logout');
+            dispatch(logout());
+            navigate('/login');
+        }catch(err){
+            alert("Something Went Error");
+        }
     }
 
     const handleUserIconClick = () => {
         navigate('/profile');
     }
 
+    const handleChatIconClick = () => {
+        navigate("/messenger")
+    }
+
     return (
         <div className='topbar-container'>
-            <div className="topbar-left">
+            <div className="topbar-left" onClick={()=>navigate("/")}>
                 <span className="logo">Social App</span>
             </div>
 
@@ -41,7 +55,7 @@ function Topbar() {
                         <span className='topbar-icon-badge'>1</span>
                     </div>
 
-                    <div className="topbar-icon">
+                    <div className="topbar-icon" onClick={handleChatIconClick}>
                         <Chat />
                         <span className='topbar-icon-badge'>2</span>
                     </div>

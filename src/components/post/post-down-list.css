@@ -1,0 +1,15 @@
+.post-down-list{
+    position: absolute;
+    top:15px;
+    right:30px;
+    background-color: var(--primary-font-color);
+    width: 25%;
+}
+
+.post-down-list ul{
+    list-style: none;
+}
+
+.post-down-list li{
+    padding: 10px
+}
